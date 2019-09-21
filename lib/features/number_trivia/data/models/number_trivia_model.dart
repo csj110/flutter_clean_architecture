@@ -1,14 +1,14 @@
 import 'package:flutter_clean_archicture/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:meta/meta.dart';
 
-class NumberTrivialModel extends NumberTrivia {
-  NumberTrivialModel({
+class NumberTriviaModel extends NumberTrivia {
+  NumberTriviaModel({
     @required String text,
     @required int number,
   }) : super(number: number, text: text);
 
-  factory NumberTrivialModel.fromJson(Map<String, dynamic> json) {
-    return NumberTrivialModel(
+  factory NumberTriviaModel.fromJson(Map<String, dynamic> json) {
+    return NumberTriviaModel(
       text: json['text'],
       number: (json['number'] as num).toInt(),
     );

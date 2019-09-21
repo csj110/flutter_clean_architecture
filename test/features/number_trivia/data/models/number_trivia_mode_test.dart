@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../../../../fixtures/fixture_reader.dart';
 
 void main() {
-  final tNumberTriviaModel = NumberTrivialModel(number: 1, text: 'Test text');
+  final tNumberTriviaModel = NumberTriviaModel(number: 1, text: 'Test text');
 
   test(
     'should be a subclass of NumberTrivia entity',
@@ -20,7 +20,7 @@ void main() {
     test('should retrun a valid model when the Json number is an interger',
         () async {
       final Map<String, dynamic> jsonMap = json.decode(fixture('trivia.json'));
-      final result = NumberTrivialModel.fromJson(jsonMap);
+      final result = NumberTriviaModel.fromJson(jsonMap);
       expect(result, tNumberTriviaModel);
     });
     test(
@@ -28,7 +28,7 @@ void main() {
         () async {
       final Map<String, dynamic> jsonMap =
           json.decode(fixture('trivia_double.json'));
-      final result = NumberTrivialModel.fromJson(jsonMap);
+      final result = NumberTriviaModel.fromJson(jsonMap);
       expect(result, tNumberTriviaModel);
     });
   });

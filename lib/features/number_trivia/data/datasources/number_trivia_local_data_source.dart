@@ -4,8 +4,8 @@ abstract class NumberTriviaLocalDataSource {
   /// get the cached [NumberTriviamodel] from the local database
   ///
   /// throw a [CacheException] if there is no data;
-  Future<NumberTrivialModel> getLastNumberTrivia();
+  Future<NumberTriviaModel> getLastNumberTrivia();
 
   ///
-  Future<void> cacheNumberTrivia(NumberTrivialModel numberTrivialModel);
+  Future<void> cacheNumberTrivia(NumberTriviaModel numberTrivialModel);
 }
