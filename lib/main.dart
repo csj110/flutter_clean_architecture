@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
+import 'features/number_trivia/presentation/pages/number_trivia_page.dart';
+import 'injection_container.dart' as di;
 
-void main() => runApp(MyApp());
+void main() {
+  di.init();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
+        title: 'Material App',
+        theme: ThemeData(
+          primaryColor: Colors.green.shade800,
+          accentColor: Colors.red.shade600,
         ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
-    );
+        home: NumberTriviaPage());
   }
 }
