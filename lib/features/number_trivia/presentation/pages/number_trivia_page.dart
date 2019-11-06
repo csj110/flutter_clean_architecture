@@ -7,13 +7,20 @@ import 'package:flutter_clean_archicture/features/number_trivia/presentation/wid
 import '../../../../injection_container.dart';
 
 class NumberTriviaPage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Number Trivia"),
       ),
-      body: BlocProvider(
+      body: _bodyBuilder(),
+    );
+  }
+
+  SingleChildScrollView _bodyBuilder() {
+    return SingleChildScrollView(
+      child: BlocProvider(
         builder: (_) => sl<NumberTriviaBloc>(),
         child: Center(
           child: Padding(
@@ -52,36 +59,3 @@ class NumberTriviaPage extends StatelessWidget {
   }
 }
 
-class TriviaControls extends StatefulWidget {
-  const TriviaControls({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  _TriviaControlsState createState() => _TriviaControlsState();
-}
-
-class _TriviaControlsState extends State<TriviaControls> {
-  String input;
-  
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Placeholder(fallbackHeight: 40.0),
-        SizedBox(height: 10),
-        Row(
-          children: <Widget>[
-            Expanded(
-              child: Placeholder(fallbackHeight: 30),
-            ),
-            SizedBox(width: 10),
-            Expanded(
-              child: Placeholder(fallbackHeight: 30),
-            ),
-          ],
-        )
-      ],
-    );
-  }
-}
